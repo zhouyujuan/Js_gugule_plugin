@@ -1,0 +1,53 @@
+
+* {
+	margin:0;
+	padding:0;
+}
+
+html,body{
+    height: 100%;
+}
+.wrapper{
+    position: relative;
+    min-height: 50%;
+}
+.container{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+    border: 5px solid #333;
+    border-radius: 5px;
+    font-size: 0;
+}
+.card{
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+}
+
+#change{
+    position: relative;
+}
+
+.changew{
+    position: absolute;
+    top: 0px;
+    left: 150px;
+}
+
+.changeh{
+    position: absolute;
+    left: 150px;
+    top: 30px
+}
+
+#changesize,#again{
+    line-height: 50px;
+    text-align: center;
+    margin: 20px;
+    width: 100px;
+    height: 50px;
+    border: 1px solid #999
+}

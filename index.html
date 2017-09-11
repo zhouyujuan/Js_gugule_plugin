@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="card.css">
+</head>
+
+<body>
+    <div id="change">
+        <div id="changesize">改变尺寸</div>
+        <label for="canvas_w" class="changew"> 输入画布的宽度
+            <input type="number" id="canvas_w">
+        </label>
+        <label for="canvas_h" class="changeh"> 输入画布的高度
+            <input type="number" id="canvas_h">
+        </label>
+        <div id="again">再来一张</div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="card" id="card">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="card.js"></script>
+    <script type="text/javascript">
+    function init() {
+        var array = ['特等奖', '一等奖', '二等奖', '三等奖', '谢谢惠顾'];
+        var price = array[parseInt(Math.random() * 4)];
+        var w = document.getElementById('canvas_w').value;
+        var h = document.getElementById('canvas_h').value;
+        if (!w) { w = 200 }
+        if (!h) { h = 50 }
+        card = new Card({
+            container: 'card',
+            textBgColor: 'yellow',
+            resultText: price,
+            defaultColor: '#ff890f',
+            rubber: 'url("rubber.ico"),auto;',
+            canvasWidth: Number(w),
+            canvasHeight: Number(h)
+
+        });
+    }
+    var card = null;
+    init();
+
+
+
+    document.getElementById('changesize').onclick = function(argument) {
+        // body...
+        card.removeChild('card');
+        init();
+
+    }
+
+    document.getElementById('again').onclick = function(argument) {
+
+        card.removeChild('card');
+        init();
+    }
+    </script>
+</body>
+
+</html>
